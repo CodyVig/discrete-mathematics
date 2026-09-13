@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-1-prop-logic" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Chapter 1: Intro to Propositional Logic</title>
+
+  <introduction>
+    <p>
+      Statements, Propositions, Arguments, and More.
+    </p>
+    <p>
+      What is math?
+    </p>
+    <p>
+      (The question is contrived, but I would encourage you to think about it!)
+    </p>
+    <p>
+      To me, most of math can be summarized by the following procedure:
+      <ul>
+        <li><p>Create some kind of mathematical space.</p></li>
+        <li><p>Impose additional structure on that space.</p></li>
+        <li><p>Explore the consequences of that structure and observe patterns and other nontrivial results.</p></li>
+        <li><p>Prove that those results hold.</p></li>
+      </ul>
+    </p>
+    <p>
+    For example, suppose we are interested in a more formal treatment of the integers:
+    </p>
+    <p>
+      <md>\mathbb{Z} := \{\ldots, -2, -1, 0, 1, 2, \ldots\}.</md>
+    </p>
+    <p>
+      This set is playing the role of the <em>mathematical space</em> referenced above. Next, we might be interested in imposing some structure on that space. For example, we might define <em>addition</em> of integers as a function ("<m>+</m>") that takes in two integers (<m>m</m> and <m>n</m>) and spits out a new integer (<m>m + n</m>) (in the usual way):
+    </p>
+  </introduction>
+  
+  <!-- include sections -->
+  <xi:include href="sec-1-2-logic-sec-statements-arguments.ptx" />
+  <xi:include href="sec-1-3-conditionals.ptx" />
+
+</chapter>
