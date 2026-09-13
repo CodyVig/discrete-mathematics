@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-1-3-conditionals" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Conditionals and Biconditionals</title>
+
+  <subsection xml:id="conditionals">
+    <title>Conditionals</title>
+
+    <introduction>
+      <p>
+        Conditionals are statements that are logical inferences:
+        statements of the form <q><em>If <m>p</m>, then
+        <m>q</m>.</em></q> We write such inferences as
+        <m>p \implies q</m> and read it as <q><m>p</m> <em>implies</em>
+        <m>q</m>.</q>
+      </p>
+
+      <p>
+        <term>Note:</term> Though this language (<q><m>p</m> implies
+        <m>q</m></q>) is very common, it is often misleading. This
+        language might make you think that <m>q</m> can be, in some
+        sense, <em>deduced</em> from <m>p</m>, and that the truth of
+        <m>p</m> is necessary for <m>p \implies q</m> to be meaningful.
+        This is not the case, as we will soon see.
+      </p>
+
+      <p>
+        For example:
+      </p>
+
+      <blockquote>
+        <p>
+          If <m>a</m> and <m>b</m> are the lengths of the legs of a
+          right triangle with hypotenuse <m>c</m>, then
+          <m>a^2 + b^2 = c^2</m>
+        </p>
+      </blockquote>
+
+      <p>
+        Or:
+      </p>
+
+      <blockquote>
+        <p>
+          If 288 is divisible by 9, then 288 is divisible by 3.
+        </p>
+      </blockquote>
+
+      <p>
+        The truth of <m>p</m> gives us information to update our
+        knowledge about the truth of <m>q</m>; that is, the truth of
+        <m>q</m> is <em>conditioned</em> on <m>p</m>.
+      </p>
+
+      <p>
+        <ul>
+          <li>Def. Let <m>p</m> and <m>q</m> be propositions. The
+          conditional statement <m>p \implies q</m> is the proposition
+          <q>if <m>p</m>, then <m>q</m>.</q> The conditional statement
+          <m>p \implies q</m> is <term>false</term> when <m>p</m> is
+          true and <m>q</m> is false, and <term>true</term> otherwise.
+          In the conditional statement <m>p \implies q</m>, <m>p</m> is
+          called the <em>hypothesis</em> (or <em>antecedent</em> or
+          <em>premise</em>) and <m>q</m> is called the
+          <em>conclusion</em> (or <em>consequence</em>).</li>
+        </ul>
+      </p>
+
+      <p>
+        As a truth table:
+      </p>
+
+      <tabular>
+        <row header="yes">
+          <cell><m>p</m></cell>
+          <cell><m>q</m></cell>
+          <cell><m>p \implies q</m></cell>
+        </row>
+        <row>
+          <cell><m>T</m></cell>
+          <cell><m>T</m></cell>
+          <cell><m>T</m></cell>
+        </row>
+        <row>
+          <cell><m>T</m></cell>
+          <cell><m>F</m></cell>
+          <cell><m>F</m></cell>
+        </row>
+        <row>
+          <cell><m>F</m></cell>
+          <cell><m>T</m></cell>
+          <cell><m>T</m></cell>
+        </row>
+        <row>
+          <cell><m>F</m></cell>
+          <cell><m>F</m></cell>
+          <cell><m>T</m></cell>
+        </row>
+      </tabular>
+
+      <p>
+        The first two rows are liekly expected, based on the discussion
+        above.
+      </p>
+
+      <p>
+        A conditional statement that is true by virtue of the fact that
+        its hypothesis is false (i.e., the bottom two rows) is called
+        <term>vacuously true</term>, because the statement itself is
+        true, it just does not apply in this particular situation. For
+        example, consider our example from above:
+      </p>
+
+      <blockquote>
+        <p>
+          If <m>a</m> and <m>b</m> are the lengths of the legs of a
+          right triangle with hypotenuse <m>c</m>, then
+          <m>a^2 + b^2 = c^2</m>
+        </p>
+      </blockquote>
+
+      <p>
+        If <m>(a, b, c)</m> is not a Pythagorean triple (i.e., <m>p</m>
+        is false), the <em>implication</em> is still true, it's just not
+        relevant.
+      </p>
+    </introduction>
+
+    <subsubsection xml:id="representation-as-an-or-statement">
+      <title>Representation as an <q>Or</q> Statement</title>
+
+      <p>
+        I claim: <m>p \implies q \equiv q \lor \lnot p</m>.
+      </p>
+
+      <blockquote>
+        <p>
+          Proof:
+        </p>
+
+        <tabular>
+          <row header="yes">
+            <cell><m>p</m></cell>
+            <cell><m>q</m></cell>
+            <cell><m>p \implies q</m></cell>
+            <cell><m>\lnot p</m></cell>
+            <cell><m>q \lor \lnot p</m></cell>
+          </row>
+          <row>
+            <cell><m>T</m></cell>
+            <cell><m>T</m></cell>
+            <cell><m>T</m></cell>
+            <cell><m>F</m></cell>
+            <cell><m>T</m></cell>
+          </row>
+          <row>
+            <cell><m>T</m></cell>
+            <cell><m>F</m></cell>
+            <cell><m>F</m></cell>
+            <cell><m>F</m></cell>
+            <cell><m>F</m></cell>
+          </row>
+          <row>
+            <cell><m>F</m></cell>
+            <cell><m>T</m></cell>
+            <cell><m>T</m></cell>
+            <cell><m>T</m></cell>
+            <cell><m>T</m></cell>
+          </row>
+          <row>
+            <cell><m>F</m></cell>
+            <cell><m>F</m></cell>
+            <cell><m>T</m></cell>
+            <cell><m>T</m></cell>
+            <cell><m>T</m></cell>
+          </row>
+        </tabular>
+      </blockquote>
+
+      <p>
+        This is more profound than it seems. This implies that logical
+        inferences can be reduced to simpler logical connectives. This
+        is how computers implement more sophisticated logical
+        operations. Computers cannot natively handle implications, but
+        they can handle AND, OR, and NOT (using voltage signals and
+        transistors).
+      </p>
+    </subsubsection>
+
+    <subsubsection xml:id="contrapositive-converse-and-inverse">
+      <title>Contrapositive, Converse, and Inverse</title>
+
+      <introduction>
+        <p>
+          There are three different types of statements that are related
+          to implications:
+        </p>
+      </introduction>
+
+      <paragraphs xml:id="contrapositive">
+        <title>Contrapositive</title>
+
+        <p>
+          <ul>
+            <li>Def. The <term>contrapositive</term> of the statement
+            <q>If <m>p</m>, then <m>q</m></q> (i.e.,
+            <m>p \implies q</m>) is the statement <q>If not <m>q</m>,
+            then not <m>p</m></q> (i.e.,
+            <m>\lnot q \implies \lnot p</m>).</li>
+          </ul>
+        </p>
+
+        <p>
+          <term>Important Fact</term>: Implications are logically
+          equivalent to their contrapositives. That is,
+          <m>p \implies q \equiv \lnot q \implies \lnot p</m>.
+        </p>
+
+        <blockquote>
+          <p>
+            Proof. Homework.
+          </p>
+        </blockquote>
+
+        <p>
+          Why is this so important? Because it can often simplify
+          difficult problems into much simpler ones.
+        </p>
+
+        <blockquote>
+          <p>
+            Example: What is the converse of <q>If <m>n^2</m> is even,
+            then <m>n</m> is even</q>? It is <q>If <m>n</m> is odd, then
+            <m>n^2</m> is odd.</q> This is much easier to prove!
+          </p>
+        </blockquote>
+      </paragraphs>
+
+      <paragraphs xml:id="converse">
+        <title>Converse</title>
+
+        <p>
+          <ul>
+            <li>Def. The <term>converse</term> of the statement <q>If
+            <m>p</m>, then <m>q</m></q> (i.e., <m>p \implies q</m>) is
+            the statement <q>If <m>q</m>, then <m>p</m></q> (i.e., $ q
+            p$).</li>
+          </ul>
+        </p>
+
+        <p>
+          Is a conditional logically equivalent to its converse? No!
+          (Prove this.)
+        </p>
+      </paragraphs>
+
+      <paragraphs xml:id="inverse">
+        <title>Inverse</title>
+
+        <p>
+          <ul>
+            <li>Def. The <term>inverse</term> of the statement <q>If
+            <m>p</m>, then <m>q</m></q> (i.e., <m>p \implies q</m>) is
+            the statement <q>If not <m>p</m>, then not <m>q</m></q>
+            (i.e., <m>\lnot p \implies \lnot q</m>).</li>
+          </ul>
+        </p>
+
+        <p>
+          Is a conditional logically equivalent to its inverse? No!
+          (Prove this.)
+        </p>
+      </paragraphs>
+    </subsubsection>
+  </subsection>
+
+  <subsection xml:id="biconditionals">
+    <title>Biconditionals</title>
+
+    <introduction>
+      <p>
+        <ul>
+          <li>Def. Let <m>p</m> and <m>q</m> be propositions. The
+          biconditional statement <m>p \iff q</m> is the proposition
+          <q><m>p</m> if and only if <m>q</m>.</q> The biconditional
+          statement <m>p \iff q</m> is true when <m>p</m> and <m>q</m>
+          have the same truth values, and is false otherwise.
+          Biconditional statements are also called
+          <em>bi-implications</em>.</li>
+        </ul>
+      </p>
+
+      <tabular>
+        <row header="yes">
+          <cell><m>p</m></cell>
+          <cell><m>q</m></cell>
+          <cell><m>p \iff q</m></cell>
+        </row>
+        <row>
+          <cell><m>T</m></cell>
+          <cell><m>T</m></cell>
+          <cell><m>T</m></cell>
+        </row>
+        <row>
+          <cell><m>T</m></cell>
+          <cell><m>F</m></cell>
+          <cell><m>F</m></cell>
+        </row>
+        <row>
+          <cell><m>F</m></cell>
+          <cell><m>T</m></cell>
+          <cell><m>F</m></cell>
+        </row>
+        <row>
+          <cell><m>F</m></cell>
+          <cell><m>F</m></cell>
+          <cell><m>T</m></cell>
+        </row>
+      </tabular>
+
+      <p>
+        Claim:
+        <m>p \iff q \equiv (p \implies q) \land (q \implies p)</m>.
+      </p>
+
+      <p>
+        Note: Since <m>p \implies q</m> can be written in terms of AND,
+        OR, and NOT, <m>p \iff q</m> can also be written in terms of
+        AND, OR, and NOT.
+      </p>
+    </introduction>
+
+    <subsubsection xml:id="necessary-and-sufficient-conditions">
+      <title>Necessary and Sufficient Conditions</title>
+
+      <p>
+        If <m>p</m> and <m>q</m> are statements:
+      </p>
+
+      <p>
+        <ul>
+          <li><m>p</m> is a <term>sufficient condition</term> for
+          <m>q</m> means <q>if <m>p</m> then <m>q</m>.</q></li>
+          <li><m>p</m> is a <term>necessary condition</term> for
+          <m>q</m> means <q>if not <m>p</m> then not <m>q</m>.</q></li>
+        </ul>
+      </p>
+
+      <p>
+        Using the contrapositive, we see that <m>p</m> is a
+        <term>necessary condition</term> for <m>q</m> equivalently means
+        <q>if <m>q</m> then <m>p</m>.</q> Hence, <m>p \iff q</m> means
+        that <m>p</m> is a necessary and sufficient condition for
+        <m>q</m> (and equivalently <m>q</m> is a necessary and
+        sufficient condition for <m>p</m>).
+      </p>
+    </subsubsection>
+  </subsection>
+</section>

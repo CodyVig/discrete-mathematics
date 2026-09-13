@@ -1,0 +1,815 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-1-2-logic-sec-statements-arguments" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Statements, Arguments, and Truth Tables</title>
+
+  <subsection xml:id="logic-overview">
+    <title>Overview</title>
+
+    <p>
+      Logic is not the study of the <em>content</em> of an argument.
+      Logic is the study of the <em>structure</em> of an argument. A
+      logical analysis will never be able to tell you whether or not a
+      particular claim has merit; it will only tell you if the truth of
+      the conclusion follows necessarily from the truth of the premises.
+    </p>
+
+    <p>
+      What do I mean by the <q>structure</q> of an argument?
+    </p>
+
+    <p>
+      Consider the following arguments.
+    </p>
+
+    <p>
+      Argument 1:
+    </p>
+
+    <blockquote>
+      <p>
+        If <m>x &gt; 0</m> and <m>x^2 = 4</m>, then
+        <m>x = 2</m>.
+      </p>
+      <p>
+        Therefore, if <m>x \neq 2</m>,
+        then <m>x^2 \neq 4</m> or <m>x \leq 0</m>.
+      </p>
+    </blockquote>
+
+    <p>
+      Argument 2:
+    </p>
+
+    <blockquote>
+      <p>
+        If I like Math and I like Data Science, I will like Discrete
+        Mathematics.
+      </p>
+      <p>
+        Therefore, if I do not like
+        Discrete Mathematics, then I do not like Math or I do not like
+        Data Science.
+      </p>
+    </blockquote>
+
+    <p>
+      The content of these arguments is very different, but the
+      structure is the same. They are both of the form:
+    </p>
+
+    <blockquote>
+      <p>
+        If <m>p</m> and <m>q</m>, then
+        <m>r</m>.
+      </p>
+      <p>
+        Therefore, if not <m>r</m>, then not
+        <m>p</m> or not <m>q</m>.
+      </p>
+    </blockquote>
+
+    <p>
+      Both are <em>valid</em> arguments in the context of formal logic,
+      but one is true, while the other has little merit. The actual
+      content contained within the statement variables <m>p</m>,
+      <m>q</m>, and <m>r</m> is irrelevant to our analysis. The
+      structure is what matters.
+    </p>
+  </subsection>
+
+  <subsection xml:id="stmt-and-args">
+    <title>Statements and Arguments.</title>
+
+    <introduction>
+      <p>
+        Whenever you are studying a new branch of mathematics, you weant
+        to start with a rigorous foundation. You'll want to define the
+        space and the elements that live within it, impose some
+        additional structure on that space, and then explore the
+        consequences. So, in order to do that, we need some definitions:
+      </p>
+
+      <definition xml:id="def-statement">
+        <statement>
+          <p>
+            A <term>statement</term> (or <term>proposition</term>) is a sentence
+            that is true or false but not both.
+          </p>
+        </statement>
+      </definition>
+
+      <definition xml:id="def-atomic-statement">
+        <statement>
+          <p>
+            An <term>atomic</term> statement is a statement that cannot be
+            divided into smaller statements.
+          </p>
+        </statement>
+      </definition>
+
+      <definition xml:id="def-molecular-statement">
+        <statement>
+          <p>
+            A <term>molecular</term> statement is a statement that is not
+            atomic.
+          </p>
+        </statement>
+      </definition>
+
+      <p>
+        Ways to combine statements:
+      </p>
+
+      <p>
+        <ul>
+          <li>The <term>conjunction</term> (i.e., <q>and</q>) of
+          <m>p</m> and <m>q</m> (<m>p \land q</m>) is true when <m>p</m>
+          and <m>q</m> are both true, and false otherwise.</li>
+          <li>The <term>disjunction</term> (i.e., <q>or</q>) of <m>p</m>
+          and <m>q</m> (<m>p \lor q</m>) is true when either <m>p</m> or
+          <m>q</m>, or possibly both <m>p</m> and <m>q</m>, are true,
+          and false otherwise.</li>
+          <li>The <term>negation</term> (i.e., <q>not</q>) of <m>p</m>
+          (<m>\sim p</m> or <m>\lnot p</m>) is true when <m>p</m> is
+          false, and false otherwise.</li>
+        </ul>
+      </p>
+    </introduction>
+
+    <subsubsection xml:id="truth-tables">
+      <title>Truth Tables</title>
+
+      <p>
+        To more easily define these terms, we introduce the concept of
+        a truth table. What makes formal logic so nice to work with is
+        the fact that each of the individual statements can only take
+        on one of two values, <m>T</m> (True) or <m>F</m> (False). So,
+        we enumerate them.
+      </p>
+
+      <p>
+        Consider the truth table for <m>p \land q</m>:
+      </p>
+
+      <tabular>
+        <col halign="center" />
+        <col halign="center" />
+        <col halign="center" />
+        <row header="yes" bottom="major"> 
+          <cell><m>p</m></cell>
+          <cell><m>q</m></cell>
+          <cell><m>p \land q</m></cell>
+        </row>
+        <row>
+          <cell><m>T</m></cell>
+          <cell><m>T</m></cell>
+          <cell><m>T</m></cell>
+        </row>
+        <row>
+          <cell><m>T</m></cell>
+          <cell><m>F</m></cell>
+          <cell><m>F</m></cell>
+        </row>
+        <row>
+          <cell><m>F</m></cell>
+          <cell><m>T</m></cell>
+          <cell><m>F</m></cell>
+        </row>
+        <row>
+          <cell><m>F</m></cell>
+          <cell><m>F</m></cell>
+          <cell><m>F</m></cell>
+        </row>
+      </tabular>
+
+      <p>
+        Consider the truth table for <m>p \lor q</m>:
+      </p>
+
+      <tabular>
+        <col halign="center"/>
+        <col halign="center"/>
+        <col halign="center"/>
+        <row header="yes" bottom="major"> 
+          <cell><m>p</m></cell>
+          <cell><m>q</m></cell>
+          <cell><m>p \lor q</m></cell>
+        </row>
+        <row>
+          <cell><m>T</m></cell>
+          <cell><m>T</m></cell>
+          <cell><m>T</m></cell>
+        </row>
+        <row>
+          <cell><m>T</m></cell>
+          <cell><m>F</m></cell>
+          <cell><m>T</m></cell>
+        </row>
+        <row>
+          <cell><m>F</m></cell>
+          <cell><m>T</m></cell>
+          <cell><m>T</m></cell>
+        </row>
+        <row>
+          <cell><m>F</m></cell>
+          <cell><m>F</m></cell>
+          <cell><m>F</m></cell>
+        </row>
+      </tabular>
+
+      <p>
+        Consider the truth table for <m>\lnot p</m>:
+      </p>
+
+      <tabular>
+        <col halign="center"/>
+        <col halign="center"/>
+        <row header="yes" bottom="major"> 
+          <cell><m>p</m></cell>
+          <cell><m>\lnot p</m></cell>
+        </row>
+        <row>
+          <cell><m>T</m></cell>
+          <cell><m>F</m></cell>
+        </row>
+        <row>
+          <cell><m>F</m></cell>
+          <cell><m>T</m></cell>
+        </row>
+      </tabular>
+
+      <p>
+        These tables give us an easy framework to understand more
+        complicated combinations of statements.
+      </p>
+
+      <paragraphs xml:id="examples">
+        <title>Examples</title>
+
+        <p>
+          Here we'll run through a couple more truth tables so you can see what
+          they might look like in more complicated situations.
+        </p>
+
+        <example>
+          <title>Exclusive Or</title>
+          <statement>
+            <p>
+              In logic, the word <q>or</q> is <term>inclusive</term>; that is,
+              it includes the case in which <em>both</em> statements are true.
+              It is useful to have a notion of an <term>exclusive or</term>
+              that is only true when exactly one of <m>p</m> and <m>q</m> are
+              true. I claim that the following statement form represents this
+              concept:
+            </p>
+            <p>
+              <md>p \oplus q := (p \lor q) \land \lnot (p \land q).</md>
+            </p>
+            <p>
+              Show that <m>p \oplus q</m> is true when exactly one of <m>p</m>
+              and <m>q</m> is true by constructing a truth table.
+            </p>
+          </statement>
+
+          <solution>
+            <p>
+              We will construct a truth table for the statement
+              <m>p \oplus q</m>.
+            </p>
+
+              <tabular>
+              <col halign="center"/>
+              <col halign="center"/>
+              <col halign="center"/>
+              <col halign="center"/>
+              <col halign="center"/>
+              <col halign="center"/>
+              <row header="yes" bottom="major"> 
+                <cell><m>p</m></cell>
+                <cell><m>q</m></cell>
+                <cell><m>p \lor q</m></cell>
+                <cell><m>p \land q</m></cell>
+                <cell><m>\lnot (p \land q)</m></cell>
+                <cell><m>(p \lor q) \land \lnot (p \land q)</m></cell>
+              </row>
+              <row>
+                <cell><m>T</m></cell>
+                <cell><m>T</m></cell>
+                <cell><m>T</m></cell>
+                <cell><m>T</m></cell>
+                <cell><m>F</m></cell>
+                <cell><m>F</m></cell>
+              </row>
+              <row>
+                <cell><m>T</m></cell>
+                <cell><m>F</m></cell>
+                <cell><m>T</m></cell>
+                <cell><m>F</m></cell>
+                <cell><m>T</m></cell>
+                <cell><m>T</m></cell>
+              </row>
+              <row>
+                <cell><m>F</m></cell>
+                <cell><m>T</m></cell>
+                <cell><m>T</m></cell>
+                <cell><m>F</m></cell>
+                <cell><m>T</m></cell>
+                <cell><m>T</m></cell>
+              </row>
+              <row>
+                <cell><m>F</m></cell>
+                <cell><m>F</m></cell>
+                <cell><m>F</m></cell>
+                <cell><m>F</m></cell>
+                <cell><m>T</m></cell>
+                <cell><m>F</m></cell>
+              </row>
+              </tabular>
+            <p>
+              The last column is true when exactly one of <m>p</m> and
+              <m>q</m> is true, as desired.
+            </p>
+          </solution>
+
+        </example>
+
+        <example>
+          <statement>
+            <p>
+              <term>Example 2</term>: Draw the truth table for the statement
+              <m>(p \land q) \lor \lnot r</m>.
+            </p>
+          </statement>
+
+          <solution>
+            <p>
+              We will construct a truth table for the statement
+              <m>(p \land q) \lor \lnot r</m>.
+            </p>
+            <tabular>
+              <col halign="center"/>
+              <col halign="center"/>
+              <col halign="center"/>
+              <col halign="center"/>
+              <col halign="center"/>
+              <col halign="center"/>
+              <row header="yes" bottom="major"> 
+                <cell><m>p</m></cell>
+                <cell><m>q</m></cell>
+                <cell><m>r</m></cell>
+                <cell><m>p \land q</m></cell>
+                <cell><m>\lnot r</m></cell>
+                <cell><m>(p \land q) \lor \lnot r</m></cell>
+              </row>
+              <row>
+                <cell><m>T</m></cell>
+                <cell><m>T</m></cell>
+                <cell><m>T</m></cell>
+                <cell><m>T</m></cell>
+                <cell><m>F</m></cell>
+                <cell><m>T</m></cell>
+              </row>
+              <row>
+                <cell><m>T</m></cell>
+                <cell><m>T</m></cell>
+                <cell><m>F</m></cell>
+                <cell><m>T</m></cell>
+                <cell><m>T</m></cell>
+                <cell><m>T</m></cell>
+              </row>
+              <row>
+                <cell><m>T</m></cell>
+                <cell><m>F</m></cell>
+                <cell><m>T</m></cell>
+                <cell><m>F</m></cell>
+                <cell><m>F</m></cell>
+                <cell><m>F</m></cell>
+              </row>
+              <row>
+                <cell><m>T</m></cell>
+                <cell><m>F</m></cell>
+                <cell><m>F</m></cell>
+                <cell><m>F</m></cell>
+                <cell><m>T</m></cell>
+                <cell><m>T</m></cell>
+              </row>
+              <row>
+                <cell><m>F</m></cell>
+                <cell><m>T</m></cell>
+                <cell><m>T</m></cell>
+                <cell><m>F</m></cell>
+                <cell><m>F</m></cell>
+                <cell><m>F</m></cell>
+              </row>
+              <row>
+                <cell><m>F</m></cell>
+                <cell><m>T</m></cell>
+                <cell><m>F</m></cell>
+                <cell><m>F</m></cell>
+                <cell><m>T</m></cell>
+                <cell><m>T</m></cell>
+              </row>
+              <row>
+                <cell><m>F</m></cell>
+                <cell><m>F</m></cell>
+                <cell><m>T</m></cell>
+                <cell><m>F</m></cell>
+                <cell><m>F</m></cell>
+                <cell><m>F</m></cell>
+              </row>
+              <row>
+                <cell><m>F</m></cell>
+                <cell><m>F</m></cell>
+                <cell><m>F</m></cell>
+                <cell><m>F</m></cell>
+                <cell><m>T</m></cell>
+                <cell><m>T</m></cell>
+              </row>
+            </tabular>
+          </solution>
+        </example>
+      </paragraphs>
+    </subsubsection>
+
+    <subsubsection xml:id="logical-equivalence">
+      <title>Logical Equivalence</title>
+
+      <p>
+        Def. Two statements, <m>p</m> and <m>q</m>, are said to be
+        <term>logically equivalent</term> if, and only if, they have
+        the same truth value under any assignment of truth values to
+        their atomic parts. If <m>p</m> and <m>q</m> are logically
+        equivalent, we write <m>p \equiv q</m>.
+      </p>
+
+      <p>
+        Essentially, two statements are logically equivalent if they
+        have identical columns on a truth tables.
+      </p>
+
+      <paragraphs xml:id="examples-1">
+        <title>Examples</title>
+
+        <example>
+          <statement>
+            <p>
+              <term>Example 1</term>: <m>p</m> and <m>\lnot (\lnot p)</m>
+              are logically eqivalent (i.e.,
+              <m>p \equiv \lnot(\lnot p)</m>).
+            </p>
+          </statement>
+
+          <solution>
+            <p>
+              Consider the truth table for <m>p</m> and <m>\lnot (\lnot p)</m>:
+            </p>
+            <tabular>
+              <col halign="center"/>
+              <col halign="center"/>
+              <col halign="center"/>
+              <row header="yes" bottom="major"> 
+                <cell><m>p</m></cell>
+                <cell><m>\lnot p</m></cell>
+                <cell><m>\lnot (\lnot p)</m></cell>
+              </row>
+              <row>
+                <cell><m>T</m></cell>
+                <cell><m>F</m></cell>
+                <cell><m>T</m></cell>
+              </row>
+              <row>
+                <cell><m>F</m></cell>
+                <cell><m>T</m></cell>
+                <cell><m>F</m></cell>
+              </row>
+            </tabular>
+            <p>
+              The two columns are identical, so <m>p \equiv \lnot (\lnot p)</m>.
+            </p>
+          </solution>
+        </example>
+
+        <example xml:id="ex-distrubute-negation">
+          <statement>
+          <p>
+            Are <m>\lnot (p \land q)</m> and <m>\lnot p \land \lnot q</m> 
+            logically equivalent? That is, can you <em>distribute</em> the
+            negation over the conjunction?
+          </p>
+          </statement>
+
+          <solution>
+            <p>
+              Consider the truth table for <m>\lnot (p \land q)</m> and
+              <m>\lnot p \land \lnot q</m>:
+            </p>
+            <tabular>
+              <col halign="center"/>
+              <col halign="center"/>
+              <col halign="center"/>
+              <col halign="center"/>
+              <col halign="center"/>
+              <col halign="center"/>
+              <col halign="center"/>
+                <row header="yes" bottom="major"> 
+                  <cell><m>p</m></cell>
+                  <cell><m>q</m></cell>
+                  <cell><m>p \land q</m></cell>
+                  <cell><m>\lnot (p \land q)</m></cell>
+                  <cell><m>\lnot p</m></cell>
+                  <cell><m>\lnot q</m></cell>
+                  <cell><m>\lnot p \land \lnot q</m></cell>
+                </row>
+                <row>
+                  <cell><m>T</m></cell>
+                  <cell><m>T</m></cell>
+                  <cell><m>T</m></cell>
+                  <cell><m>F</m></cell>
+                  <cell><m>F</m></cell>
+                  <cell><m>F</m></cell>
+                  <cell><m>F</m></cell>
+                </row>
+                <row>
+                  <cell><m>T</m></cell>
+                  <cell><m>F</m></cell>
+                  <cell><m>F</m></cell>
+                  <cell><m>T</m></cell>
+                  <cell><m>F</m></cell>
+                  <cell><m>T</m></cell>
+                  <cell><m>F</m></cell>
+                </row>
+                <row>
+                  <cell><m>F</m></cell>
+                  <cell><m>T</m></cell>
+                  <cell><m>F</m></cell>
+                  <cell><m>T</m></cell>
+                  <cell><m>T</m></cell>
+                  <cell><m>F</m></cell>
+                  <cell><m>F</m></cell>
+                </row>
+                <row>
+                  <cell><m>F</m></cell>
+                  <cell><m>F</m></cell>
+                  <cell><m>F</m></cell>
+                  <cell><m>T</m></cell>
+                  <cell><m>T</m></cell>
+                  <cell><m>T</m></cell>
+                  <cell><m>T</m></cell>
+                </row>
+            </tabular>
+
+            <p>
+              The two columns are not identical:
+            </p>
+
+            <tabular>
+              <col halign="center"/>
+              <col halign="center"/>
+              <col halign="center"/>
+              <col halign="center"/>
+              <row header="yes" bottom="major"> 
+                <cell><m>p</m></cell>
+                <cell><m>q</m></cell>
+                <cell><m>\lnot (p \land q)</m></cell>
+                <cell><m>\lnot p \land \lnot q</m></cell>
+              </row>
+              <row>
+                <cell><m>T</m></cell>
+                <cell><m>T</m></cell>
+                <cell><m>F</m></cell>
+                <cell><m>F</m></cell>
+              </row>
+              <row>
+                <cell><m>T</m></cell>
+                <cell><m>F</m></cell>
+                <cell><m>T</m></cell>
+                <cell><m>F</m></cell>
+              </row>
+              <row>
+                <cell><m>F</m></cell>
+                <cell><m>T</m></cell>
+                <cell><m>T</m></cell>
+                <cell><m>F</m></cell>
+              </row>
+              <row>
+                <cell><m>F</m></cell>
+                <cell><m>F</m></cell>
+                <cell><m>T</m></cell>
+                <cell><m>T</m></cell>
+              </row>
+            </tabular>
+
+            <p>
+              Hence
+              <m>\lnot (p \land q) \not\equiv \lnot p \land \lnot q</m>,
+              so you cannot distribute negations over conjunctions.
+            </p>
+          </solution>
+        </example>
+
+        <p>
+          As we saw in <xref ref="ex-distrubute-negation"/>, negations do not
+          distribute over conjunctions. So how <em>do</em> you negate
+          conjunctions?
+        </p>
+      </paragraphs>
+    </subsubsection>
+
+    <subsubsection xml:id="de-morgans-laws">
+      <title>De Morgan's Laws</title>
+
+      <p>
+        What is the opposite of the statement <q>I like Math and I like
+        Data Science</q>? For the statement to be true, <em>both</em>
+        atomic statements <q>I like Math</q> and <q>I like Data
+        Science</q> need to be true. So, if the statement to be false,
+        <em>at least one</em> of those atomic statements needs to be
+        false. So:
+      </p>
+
+      <p>
+        <m>\lnot</m> (I like Math and I like Data Science)
+        <m>= \lnot</m> (I like Math) <m>\lor \lnot</m> (I like Data
+        Science)
+      </p>
+
+      <p>
+        That is, I claim
+        <m>\lnot (p \land q) \equiv \lnot p \lor \lnot q</m>.
+      </p>
+
+      <tabular>
+        <col halign="center"/>
+        <col halign="center"/>
+        <col halign="center"/>
+        <col halign="center"/>
+        <col halign="center"/>
+        <col halign="center"/>
+        <col halign="center"/>
+        <row header="yes" bottom="major"> 
+          <cell><m>p</m></cell>
+          <cell><m>q</m></cell>
+          <cell><m>p \land q</m></cell>
+          <cell><m>\lnot (p \land q)</m></cell>
+          <cell><m>\lnot p</m></cell>
+          <cell><m>\lnot q</m></cell>
+          <cell><m>\lnot p \lor \lnot q</m></cell>
+        </row>
+        <row>
+          <cell><m>T</m></cell>
+          <cell><m>T</m></cell>
+          <cell><m>T</m></cell>
+          <cell><m>F</m></cell>
+          <cell><m>F</m></cell>
+          <cell><m>F</m></cell>
+          <cell><m>F</m></cell>
+        </row>
+        <row>
+          <cell><m>T</m></cell>
+          <cell><m>F</m></cell>
+          <cell><m>F</m></cell>
+          <cell><m>T</m></cell>
+          <cell><m>F</m></cell>
+          <cell><m>T</m></cell>
+          <cell><m>T</m></cell>
+        </row>
+        <row>
+          <cell><m>F</m></cell>
+          <cell><m>T</m></cell>
+          <cell><m>F</m></cell>
+          <cell><m>T</m></cell>
+          <cell><m>T</m></cell>
+          <cell><m>F</m></cell>
+          <cell><m>T</m></cell>
+        </row>
+        <row>
+          <cell><m>F</m></cell>
+          <cell><m>F</m></cell>
+          <cell><m>F</m></cell>
+          <cell><m>T</m></cell>
+          <cell><m>T</m></cell>
+          <cell><m>T</m></cell>
+          <cell><m>T</m></cell>
+        </row>
+      </tabular>
+
+      <p>
+        Similarly, <m>\lnot (p \lor q) \equiv \lnot p \land \lnot q</m>
+        (prove this!).
+      </p>
+
+      <p>
+        These equations are known as <term>De Morgan's Laws</term>:
+      </p>
+
+      <p>
+        <md>\lnot (p \land q) \equiv \lnot p \lor \lnot q,</md>
+        <md>\lnot (p \lor q) \equiv \lnot p \land \lnot q.</md>
+      </p>
+    </subsubsection>
+
+    <subsubsection xml:id="tautologies-and-contradictions">
+      <title>Tautologies and Contradictions</title>
+
+      <p>
+        For a copmplete foundation, we need two more definitions:
+      </p>
+
+      <definition xml:id="def-tautology">
+        <statement>
+          <p>
+            A <term>tautology</term> is a statement that is always true.
+          </p>
+        </statement>
+      </definition>
+
+      <definition xml:id="def-contradiction">
+        <statement>
+          <p>
+            A <term>contradiction</term> is a statement that is always false.
+          </p>
+        </statement>
+      </definition>
+
+      <example>
+        <statement>
+          <p>
+            Show that <m>p \land \lnot p</m> is a contradiction.
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            Consider the truth table for <m>p \land \lnot p</m>:
+          </p>
+          <tabular>
+            <col halign="center"/>
+            <col halign="center"/>
+            <col halign="center"/>
+            <row header="yes" bottom="major"> 
+              <cell><m>p</m></cell>
+              <cell><m>\lnot p</m></cell>
+              <cell><m>p \land \lnot p</m></cell>
+            </row>
+            <row>
+              <cell><m>T</m></cell>
+              <cell><m>F</m></cell>
+              <cell><m>F</m></cell>
+            </row>
+            <row>
+              <cell><m>F</m></cell>
+              <cell><m>T</m></cell>
+              <cell><m>F</m></cell>
+            </row>
+          </tabular>
+
+          <p>
+            Since <m>p \land \lnot p</m> is always false, it is a contradiction.
+            Hence, <m>p \land \lnot p \equiv \mathbf{c}</m>.
+          </p>
+        </solution>
+      </example>
+
+      <example>
+        <statement>
+          <p>
+            Show that <m>p \lor \mathbf{t} \equiv p</m>.
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            Consider the truth table for <m>p \lor \mathbf{t}</m>:
+          </p>
+          <tabular>
+            <col halign="center"/>
+            <col halign="center"/>
+            <col halign="center"/>
+            <row header="yes" bottom="major"> 
+              <cell><m>p</m></cell>
+              <cell><m>\mathbf{t}</m></cell>
+              <cell><m>p \lor \mathbf{t}</m></cell>
+            </row>
+            <row>
+              <cell><m>T</m></cell>
+              <cell><m>T</m></cell>
+              <cell><m>T</m></cell>
+            </row>
+            <row>
+              <cell><m>F</m></cell>
+              <cell><m>T</m></cell>
+              <cell><m>F</m></cell>
+            </row>
+          </tabular>
+
+          <p>
+            Since <m>p \lor \mathbf{t}</m> is equivalent to <m>p</m>, we have
+            <m>p \lor \mathbf{t} \equiv p</m>.
+          </p>
+        </solution>
+      </example>
+    </subsubsection>
+  </subsection>
+
+</section>

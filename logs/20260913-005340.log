@@ -1,0 +1,14 @@
+WARNING : Could not find a target 'html', but found a target 'web' with format='html'; using this target.
+INFO    : Building target web
+INFO    : XSL conversion of C:\Users\codyc\Documents\bookds\discrete-mathematics\source\main.ptx by C:\Users\codyc\.ptx\2.52.3\core\xsl\utilities\pretext-enhanced-source.xsl
+ERROR   : Error loading file:///C:/Users/codyc/Documents/bookds/discrete-mathematics/source/sec-1-3-conditionals.ptx: Extra content at the end of the document, line 361, column 1 (file:///C:/Users/codyc/Documents/bookds/discrete-mathematics/source/sec-1-3-conditionals.ptx, line 361)
+ERROR   : Error assembling source file: Extra content at the end of the document, line 361, column 1 (file:///C:/Users/codyc/Documents/bookds/discrete-mathematics/source/sec-1-3-conditionals.ptx, line 361)
+FATAL   : XML syntax for source file is invalid
+INFO    : ------------------------
+exit    : Failed to build without errors.  Exiting...
+INFO    : 
+----------------------------------------------------
+INFO    : While running pretext, the following errors occurred:
+
+INFO    : (see log messages above or in the 'logs' folder for more information)
+INFO    : ----------------------------------------------------
